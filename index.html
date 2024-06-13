@@ -13,6 +13,10 @@
         font-size: x-large;
         text-align: center;
       }
+      h2{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
       img {
         position: absolute;
         top: 40px;
@@ -21,6 +25,25 @@
       footer{
         font-family: Arial, Helvetica, sans-serif;
       }
+      img{
+        position: initial;;
+      }
+      table,
+        th,
+        td {
+          border: 1px solid black;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+          border-collapse: collapse;
+        }
+        th {
+          height: 30px;
+          width: 150px;
+        }
+        td {
+          text-align: center;
+        }
     </style>
   </head>
   <body>
@@ -35,9 +58,27 @@
       <h1>Homepage</h1>
       <img src="logo.jpg" alt="HTML logo" height="150" width="150"
     </header>
-    <section>
-      <article></article>
-    </section>
+    <header>
+      <h2>Table of Contents</h2>
+      <table>
+        <tr>
+          <th>About Me</th>
+          <td>Brief intro to myself and also my family.</td>
+        </tr>
+        <tr>
+          <th>My Interests</th>
+          <td>A brief description of my interests and what inspires me.</td>
+        </tr>
+        <tr>
+          <th>Gallery</th>
+          <td>Some pictures that I like, including my dog.</td>
+        </tr>
+        <tr>
+          <th>Contact Me</th>
+          <td>Ways to contact me (phone number and social are not real).</td>
+        </tr>
+      </table>
+    </header>
     <br />
     <! At the end, I put a footer to provide where I created the code>
     <footer>
