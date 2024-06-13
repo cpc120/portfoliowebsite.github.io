@@ -3,6 +3,7 @@
 <html>
   <head>
     <title>Contact Me</title>
+    <!In the first part of the code, I organized it where the styles and navigation are at the beginning>
     <style>
       body {
         background-color: blanchedalmond;
@@ -16,13 +17,28 @@
         font-family: Arial, Helvetica, sans-serif;
         font-size: large;
       }
-      section {
+      article{
         font-family: Arial, Helvetica, sans-serif;
         font-size: medium;
       }
       footer {
         font-family: Arial, Helvetica, sans-serif;
       }
+      table,
+        th,
+        td {
+          border: 1px solid black;
+        }
+        table {
+          border-collapse: collapse;
+        }
+        th {
+          height: 30px;
+          width: 150px;
+        }
+        td {
+          text-align: center;
+        }
     </style>
   </head>
   <body>
@@ -32,18 +48,24 @@
       <a href="gallery.html">Gallery</a> |
       <a href="contactme.html">Contact Me</a>
     </nav>
-
+<! For assignment 3, I created a table to for the contact information with the data from previous assignments> 
     <header>
       <h1>Contact Me</h1>
     </header>
-    <header>
-      <h3>Email Address</h3>
-      <section style="color: blue">ccarreon2@capellauniversity.edu</section>
-    </header>
-    <header>
-      <h3>Phone Number</h3>
-      <section>(443) 123-4567</section>
-    </header>
+    <article>
+      <table>
+        <tr>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Social Media</th>
+        </tr>
+        <tr>
+          <td>ccarreon2@capellauniversity.edu</td>
+          <td>(443) 456-789</td>
+          <td>Instagram: @ccarreon2
+        </tr>
+      </table>
+    </article>
     <br />
     <footer>
       Edited in: Visio Studio Code. <br />

@@ -3,6 +3,7 @@
 <html>
   <head>
     <title>Gallery</title>
+    <!In the first part of the code, I organized it where the styles and navigation are at the beginning>
     <style>
       body {
         background-color: blanchedalmond;
@@ -12,41 +13,49 @@
         font-size: x-large;
         text-align: center;
       }
-      p{ 
+      p {
         font-family: Arial, Helvetica, sans-serif;
         font-size: large;
       }
       footer {
         font-family: Arial, Helvetica, sans-serif;
       }
+      p {
+        display: block;
+        column-count: 1;
+      }
+      img {
+        float: right;
+      }
     </style>
   </head>
+  <nav>
+    <a href="index.html">Home</a> | <a href="aboutme.html">About Me</a> |
+    <a href="myinterests.html">My Interests</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="contactme.html">Contact Me</a>
+  </nav>
   <body>
-    <nav>
-      <a href="index.html">Home</a> | <a href="aboutme.html">About Me</a> |
-      <a href="myinterests.html">My Interests</a> |
-      <a href="gallery.html">Gallery</a> |
-      <a href="contactme.html">Contact Me</a>
-    </nav>
-
+    <div id="gridLayout">
     <header>
       <h1>Gallery</h1>
     </header>
-    <article>
-      <p>
-        I love the Baltimore Ravens and Orioles
-      <img src="logo.jpg" style=width:120px;height:120px;">
+    <! I attempted to create a gallery using the style syntax and placing each picture next to a description. I divided each into a column with their perspective caption.>
+    <p>
+      I love the Baltimore Ravens and Orioles. <img src="logo.jpg"
+      style=width:120px;height:120px;">
     </p>
     <br />
     <p>
-    I'm a big foodie.
-    <img src="pic2.jpg" style="width:120px;height:120px;"
+      I'm a big foodie. <img src="pic2.jpg" style="width:120px;height:120px;"
     </p>
     <br />
     <p>
-      This my dog Oscar, he's a Bichon Frise. 
-      <img src="pic4.jpg" style="width: 120px;height:120px;"
+      This my dog Oscar, he's a Bichon Frise. <img src="pic4.jpg" style="width:
+      120px;height:120px;"
     </p>
+    <! At the end, I put a footer to provide where I created the code>
+    <br />
     <footer>
       Edited in: Visio Studio Code. <br />
       To know more about Visio Studio Code
