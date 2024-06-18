@@ -13,17 +13,31 @@
         font-size: x-large;
         text-align: center;
       }
-      span{
+      p {
         font-family: Arial, Helvetica, sans-serif;
         font-size: large;
       }
       footer {
         font-family: Arial, Helvetica, sans-serif;
       }
-      span {
-        display: block;
-        column-count: 1;
-        text-align: center;
+      img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+      #image1 {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }
+      #image2 {
+        max-width: 45%;
+        height: 150px;
+        margin-left: 70px;
+      }
+      #image3 {
+        max-width: 45%;
+        height: 150px;
+        border-radius: 30%;
       }
     </style>
   </head>
@@ -38,19 +52,32 @@
       <h1>Gallery</h1>
     </header>
     <! I attempted to create a gallery using the style syntax and placing each picture next to a description. I divided each into a column with their perspective caption.>
-    <span>
-      I love the Baltimore Ravens and Orioles. <img src="logo.jpg"
-      style=width:150px;height:150px;">
-    </span>
+    <p>
+      I love the Baltimore Ravens and Orioles.
+      <a target="_blank" href="logo.jpg">
+        <img
+          src="logo.jpg"
+          alt="HTML logo"
+          id="image1"
+          height="150"
+          width="150"
+        />
+      </a>
+    </p>
     <br />
-    <span>
-      I'm a big foodie. <img src="pic2.jpg" style="width:150px;height:150px;"
-    </span>
+    <p>
+      I'm a big foodie.
+      <a target="_blank" href="pic2.jpg">
+        <img src="pic2.jpg" alt="foodie" id="image2" height="150" width="150" />
+      </a>
+    </p>
     <br />
-    <span>
-      This my dog Oscar, he's a Bichon Frise. <img src="pic4.jpg" style="width:
-      150px;height:150px;"
-    </span>
+    <p>
+      This my dog Oscar, he's a Bichon Frise.
+      <a target="_blank" href="pic4.jpg">
+        <img src="pic4.jpg" alt="dog" id="image3" height="150" width="150" />
+      </a>
+    </p>
     <br />
   </body>
 </html>
