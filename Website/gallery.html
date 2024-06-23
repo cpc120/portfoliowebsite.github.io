@@ -1,0 +1,87 @@
+<!Cleolynne Carreon, June 2024, gallery.html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="mystyles.css">
+    <title>Gallery</title>
+    <style>
+      body {
+        background-color: blanchedalmond;
+      }
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: x-large;
+        text-align: center;
+      }
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: large;
+      }
+      footer {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+      #image1 {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }
+      #image2 {
+        max-width: 45%;
+        height: 150px;
+        margin-left: 70px;
+      }
+      #image3 {
+        max-width: 45%;
+        height: 150px;
+        border-radius: 30%;
+      }
+    </style>
+  </head>
+  <nav>
+    <a href="index.html">Home</a> | <a href="aboutme.html">About Me</a> |
+    <a href="myinterests.html">My Interests</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="contactme.html">Contact Me</a>
+  </nav>
+  <body>
+    <header>
+      <h1>Gallery</h1>
+      <audio controls>
+        <source src="audio1.mp3" type="audio/mp3">
+        Audio is not supported by browser. 
+      </audio>
+    </header>
+    <! I attempted to create a gallery using the style syntax and placing each picture next to a description. I divided each into a column with their perspective caption.>
+    <p>
+      I love the Baltimore Ravens and Orioles.
+      <a target="_blank" href="logo.jpg">
+        <img
+          src="logo.jpg"
+          alt="HTML logo"
+          id="image1"
+          height="150"
+          width="150"
+        />
+      </a>
+    </p>
+    <br />
+    <p>
+      I'm a big foodie.
+      <a target="_blank" href="pic2.jpg">
+        <img src="pic2.jpg" alt="foodie" id="image2" height="150" width="150" />
+      </a>
+    </p>
+    <br />
+    <p>
+      This my dog Oscar, he's a Bichon Frise.
+      <a target="_blank" href="pic4.jpg">
+        <img src="pic4.jpg" alt="dog" id="image3" height="150" width="150" />
+      </a>
+    </p>
+    <br />
+  </body>
+</html>
