@@ -13,7 +13,6 @@ var displayVolunteers = function () {
 };
 
 var addVolunteer = function () {
-    // get the data from the form
     var volunteerString = $("first_name").value + " " + $("last_name").value;
 
     // store the data in an array
@@ -31,8 +30,8 @@ var addVolunteer = function () {
 
 var deleteVolunteer = function () {
     var volunteerString = $("first_name").value + " " + $("last_name").value; 
-    for (var i = 0; i < volunteerArray.length; i++){
-        if (volunteerArray[i].trim() == volunteerString.trim()){
+    for (var i=1; i < volunteerArray.length; i++){
+        if (volunteerArray[i].trim == volunteerString.trim()){
             volunteerArray.splice(i,1);
         }
     }
@@ -40,12 +39,11 @@ var deleteVolunteer = function () {
     // display the volunteers and clear the add form
     displayVolunteers();
     
-    // get the delete form ready for next entry
+    // clear fields 
     $("first_name").value = "";
     $("last_name").value = "";
     $("first_name").focus();
 };
-
 var clearList = function () {   
     // delete the data from the arrays
     volunteerArray = [];
