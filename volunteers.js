@@ -14,7 +14,11 @@ var displayVolunteers = function () {
 
 var addVolunteer = function () {
     var volunteerString = $("first_name").value + " " + $("last_name").value;
-
+    for (var i=0; i<volunteerArray.length; i++){
+        if (volunteerArray[i].trim() == volunteerString.trim){
+            volunteerArray.splice(i,1);
+        }
+    }
     // store the data in an array
     volunteerArray.push(volunteerString);
     
@@ -30,8 +34,8 @@ var addVolunteer = function () {
 
 var deleteVolunteer = function () {
     var volunteerString = $("first_name").value + " " + $("last_name").value; 
-    for (var i=1; i < volunteerArray.length; i++){
-        if (volunteerArray[i].trim == volunteerString.trim()){
+    for (var i=0; i < volunteerArray.length; i++){
+        if (volunteerArray[i].trim() == volunteerString.trim()){
             volunteerArray.splice(i,1);
         }
     }
