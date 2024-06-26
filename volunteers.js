@@ -1,7 +1,7 @@
+function replaceContent(){
 var $ = function (id) {
   return document.getElementById(id);
 };
-
 var volunteerArray = [];
 
 var displayVolunteers = function () {
@@ -16,7 +16,7 @@ var displayVolunteers = function () {
 var addVolunteer = function () {
   var volunteerString = $("first_name").value + " " + $("last_name").value;
   for (var i = 0; i < volunteerArray.length; i++) {
-    if (volunteerArray[0].trim() == volunteerString.trim) {
+    if (volunteerArray[i].trim() == volunteerString.trim) {
       volunteerArray.splice(i, 1);
     }
   }
@@ -31,11 +31,10 @@ var addVolunteer = function () {
   $("last_name").value = "";
   $("first_name").focus();
 };
-
 var deleteVolunteer = function () {
   var volunteerString = $("first_name").value + " " + $("last_name").value;
   for (var i = 0; i < volunteerArray.length; i++) {
-    if (volunteerArray[0].trim() == volunteerString.trim()) {
+    if (volunteerArray[i].trim() == volunteerString.trim()) {
       volunteerArray.splice(i, 1);
     }
   }
@@ -71,3 +70,4 @@ window.onload = function () {
   $("sort_button").onclick = sortList;
   $("first_name").focus();
 };
+    }
