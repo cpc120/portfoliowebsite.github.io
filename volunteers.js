@@ -44,4 +44,18 @@ var $ = function(id){
       $("first_name").focus();      
   }
 }; 
-  }
+//comparing the first names and sorting based on function
+function compare(a,b){
+  var splitA = a.split("");
+  var splitB = b.split("");
+  var first_nameA = splitA[splitA.length - 1];
+  var first_nameB = splintB[splintB.length - 1];
+  if (first_nameA < first_nameB) return -1;
+  if (first_nameA > first_nameB) return 1;
+  return 0;
+}
+var sortListFirst_Name = function() {
+  volunteerListArray.sort(compare);
+displayVolunteerList();
+};
+};
