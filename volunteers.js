@@ -14,7 +14,7 @@ var displayVolunteers = function () {
 };
 
 var addVolunteer = function () {
-  var volunteerString = $("first_name").value + " " + $("last_name").value;
+  var volunteerString = $("#first_name").value + " " + $("last_name").value;
   for (var i = 0; i < volunteerArray.length; i++) {
     if (volunteerArray[i].trim() == volunteerString.trim) {
       volunteerArray.splice(i, 1);
@@ -32,7 +32,7 @@ var addVolunteer = function () {
   $("first_name").focus();
 };
 var deleteVolunteer = function () {
-  var volunteerString = $("first_name").value + " " + $("last_name").value;
+  var volunteerString = $("#first_name").value + " " + $("last_name").value;
   for (var i = 0; i < volunteerArray.length; i++) {
     if (volunteerArray[i].trim() == volunteerString.trim()) {
       volunteerArray.splice(i, 1);
