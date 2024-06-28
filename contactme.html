@@ -1,0 +1,64 @@
+<!Cleolynne Carreon, June 2024, contactme.html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="mystyles.css">
+    <title>Contact Me</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a> | <a href="aboutme.html">About Me</a> |
+      <a href="myinterests.html">My Interests</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="contactme.html">Contact Me</a>
+    </nav>
+    <header>
+      <h1>Contact Me</h1>
+    </header>
+    <article>
+      <table>
+        <tr>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Social Media</th>
+        </tr>
+        <tr>
+          <td>ccarreon2@capellauniversity.edu</td>
+          <td>(443) 456-789</td>
+          <td>Instagram: @ccarreon2
+        </tr>
+      </table>
+    </article>
+    <br />
+    <h2>Request for Infomation</h2>
+    <p>Please provide your contact information and best way to contact you for more.</p>
+<form action="/response_page.js.php" method="post" target="_blank">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="Email">Email:</label><br>
+  <input type="text" id="Email" name="Email"><br>
+  <label for="pnumber">Phone Number:</label><br>
+  <input type="text" id="Phone" name="pnumber"><br><br> 
+  <input type="radio" id="Email" name="best_contact" value="Email">
+  <label for="Email">Email</label><br>
+  <input type="radio" id="Phone" name="best_contact" value="Phone">
+  <label for="pnumber">Phone Number</label><br>
+  <input type="radio" id="Both" name="fav_language" value="Both">
+  <label for="Both">Both</label><br><br>
+  <label for="gender">Choose a your gender:</label>
+  <select name="gender" id="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Prefer not to say">Prefer not to say</option>
+  </select><br><br>
+  <input type="submit" value="Submit">
+</form><br>
+    <footer>
+      Edited in: Visio Studio Code. <br />
+      To know more about Visio Studio Code
+      <a href="https://code.visualstudio.com/">click here</a>
+    </footer>
+  </body>
+</html>
