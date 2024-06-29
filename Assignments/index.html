@@ -4,19 +4,15 @@
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script>
-      function onLoadMethod() {
-        var imageload = new Image();
-        imageload.src = "images/banner1.jpg";
-        imageload.src = "images/banner2.jpg";
-        imageload.src = "images/banner3.jpg";
+      function onLoadMethod(){
+        var imageLoad = new Image();
+        imageLoad.src = "images/banner1.jpg";
+        imageLoad.src = "images/banner2.jpg";
+        imageLoad.src = "images/banner3.jpg";
         changeImage();
       }
-      function changeImage() {
-        var imageSrcArray = [
-          'images/banner1.jpg',
-          'images/banner2.jpg',
-          'images/banner3.jpg'
-        ]
+      function changeImage(){
+        var imageSrcArray = ['images/banner1.jpg','images/banner2.jpg','images/banner3.jpg']
         var i = 0;
         var j = 10;
         while (j > 0) {
@@ -25,9 +21,9 @@
           if (i >= imageSrcArray.length) i = 0;
           j--;
         }
-        function changeDisplayImage() {
-          document.getElementById("banner1").src = imageSrc;
-          console.log(document.getElementById("image1").src);
+        function changeDisplayImage(){
+          document.getElementById('banner1').src=imageSrc
+          console.log(document.getElementById('banner1').src)
         }
       }
     </script>
@@ -54,19 +50,19 @@
       Banner Images<br />
       <img
         src="images/banner1.jpg"
-        alt="banner1"
+        alt="banner"
         id="banner1"
         onclick="changeImage()"
       />
       <img
         src="images/banner2.jpg"
-        alt="banner2"
+        alt="banner"
         id="banner2"
         onclick="changeImage()"
       />
       <img
         src="images/banner3.jpg"
-        alt="banner3"
+        alt="banner"
         id="banner3"
         onclick="changeImage()"
       />

@@ -1,68 +1,101 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
+  <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-</head>
+    <script>
+      function bigImg(BImg) {
+        BImg.style.height = "400px";
+        BImg.style.width = "400px";
+      }
+      function normalImg(SImg) {
+        SImg.style.height = "200px";
+        SImg.style.width = "200px";
+      }
+      function onLoadMethod(){
+        var imageload = new Image();
+        imageload.src= "Assignments/images/firefighter.jpg"
+      }
+      function changeImage(){
+        document.getElementById
+      }
+    </script>
+  </head>
 
-<body>
+  <body onload = "onLoadMethod()">
     <header>
-        <div class="top">
-            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-        </div>
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="invitation.html">Invitation</a>
-                </li>
-				<li><a href="volunteer.html">Volunteers</a>
-                </li>
-                <li><a href="gallery.html"  class="active">Gallery</a>
-                </li>
-                <li><a href="registration.html">Registration</a>
-                </li>
-            </ul>
-
-        </nav>
+      <div class="top">
+        <a class="logo" href="index.html"
+          >CapellaVolunteers<span class="dotcom">.org</span></a
+        >
+      </div>
+      <nav>
+        <ul class="topnav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="invitation.html">Invitation</a></li>
+          <li><a href="volunteer.html">Volunteers</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="registration.html">Registration</a></li>
+        </ul>
+      </nav>
     </header>
     <section id="gallery">
+      <div class="gallery">
+        <a target="_blank" href="images/firefighter.jpg">
+          <img
+            img
+            onmouseover="bigImg(this)"
+            onmouseout="normalImg(this)"
+            src="images/firefighter.jpg"
+            alt="firefighter"
+            width="300"
+            height="200"
+          />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
 
-<div class="gallery">
-  <a target="_blank" href="images/firefighter.jpg">
-    <img src="images/firefighter.jpg" alt="firefighter" width="300" height="200">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
+      <div class="gallery">
+        <a target="_blank" href="images/work.jpg">
+          <img
+            onmouseover="bigImg(this)"
+            onmouseout="normalImg(this)"
+            src="images/work.jpg"
+            alt="work"
+            width="300"
+            height="200"
+          />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
 
-<div class="gallery">
-  <a target="_blank" href="images/work.jpg">
-    <img src="images/work.jpg" alt="work" width="300" height="200">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
+      <div class="gallery">
+        <a target="_blank" href="images/silhouette.jpg">
+          <img
+            onmouseover="bigImg(this)"
+            onmouseout="normalImg(this)"
+            src="images/silhouette.jpg"
+            alt="silhouette"
+            width="300"
+            height="200"
+          />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
 
-<div class="gallery">
-  <a target="_blank" href="images/silhouette.jpg">
-    <img src="images/silhouette.jpg" alt="silhouette" width="300" height="200">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
-
-<div class="gallery">
-  <a target="_blank" href="images/event.jpg">
-    <img src="images/event.jpg" alt="event" width="300" height="200">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
-
+      <div class="gallery">
+        <a target="_blank" href="images/event.jpg">
+          <img
+            onmouseover="bigImg(this)"
+            onmouseout="normalImg(this)"
+            src="images/event.jpg"
+            alt="event"
+            width="300"
+            height="200"
+          />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
     </section>
-
-
-
-    <footer>This events site is for IT3515 tasks.
-    </footer>
-</body>
-
+  </body>
 </html>
