@@ -3,33 +3,30 @@
   <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script>
-      function onLoadMethod(){
-        var imageLoad = new Image();
-        imageLoad.src = "images/banner1.jpg";
-        imageLoad.src = "images/banner2.jpg";
-        imageLoad.src = "images/banner3.jpg";
-        changeImage();
-      }
-      function changeImage(){
-        var imageSrcArray = ['images/banner1.jpg','images/banner2.jpg','images/banner3.jpg']
-        var i = 0;
-        var j = 10;
-        while (j > 0) {
-          setTimeout(changeDisplayImage,3000, imageSrcArray[i]);
+    <script type="text/javascript">
+      var i = 0;
+      var images = [];
+      var time = 3000;
+
+      //image list 
+      images[0] = 'images/banner1.jpg';
+      images[1] = 'images/banner2.jpg';
+      images[2] = 'images/banner3.jpg';
+
+      //change image
+      function changeImg(){
+        document.slide.src = images[i];
+        if(i < images.length - 1){
           i++;
-          if (i >= imageSrcArray.length) i = 0;
-          j--;
+        } else {
+          i = 0;
         }
-        function changeDisplayImage(){
-          document.getElementById('banner1').src=imageSrc
-          console.log(document.getElementById('banner1').src)
-        }
+        setTimeout("changeImg()", time);
       }
+      window.onLoad = changeImg;
     </script>
   </head>
-
-  <body onload="onLoadMethod()">
+  <body>
     <header>
       <div class="top">
         <a class="logo" href="index.html"
@@ -48,24 +45,7 @@
     </header>
     <section id="bannerImages">
       Banner Images<br />
-      <img
-        src="images/banner1.jpg"
-        alt="banner"
-        id="banner1"
-        onclick="changeImage()"
-      />
-      <img
-        src="images/banner2.jpg"
-        alt="banner"
-        id="banner2"
-        onclick="changeImage()"
-      />
-      <img
-        src="images/banner3.jpg"
-        alt="banner"
-        id="banner3"
-        onclick="changeImage()"
-      />
+      <img name="slide" src="images/banner1.jpg" alt="banner" id="banner1" />
     </section>
   </body>
 </html>
