@@ -4,6 +4,14 @@
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script type="text/javascript">
+      function onLoadMethod() {
+        var imageLoad = new Image();
+        imageLoad.src = "images/banner1.jpg";
+        imageLoad.src = "images/banner2.jpg";
+        imageLoad.src = "images/banner3.jpg";
+        changeImg();
+      }
+      //declaring variables
       var i = 0;
       var images = [];
       var time = 3000;
@@ -26,7 +34,7 @@
       window.onLoad = changeImg;
     </script>
   </head>
-  <body>
+  <body onload="onLoadMethod()">
     <header>
       <div class="top">
         <a class="logo" href="index.html"
