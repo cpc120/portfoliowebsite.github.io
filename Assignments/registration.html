@@ -1,68 +1,95 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
+  <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-</head>
+    <script>
+      function myFunction() {
+        alert("The form was submitted");
+      }
+      function myFunction1() {
+        alert("The was not submitted");
+      }
+    </script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="top">
-            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-        </div>
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="invitation.html">Invitation</a>
-                </li>
-				<li><a href="volunteer.html">Volunteers</a>
-                </li>
-                <li><a href="gallery.html">Gallery</a>
-                </li>
-                <li><a href="registration.html" class="active">Registration</a>
-                </li>
-            </ul>
-
-        </nav>
+      <div class="top">
+        <a class="logo" href="index.html"
+          >CapellaVolunteers<span class="dotcom">.org</span></a
+        >
+      </div>
+      <nav>
+        <ul class="topnav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="invitation.html">Invitation</a></li>
+          <li><a href="volunteer.html">Volunteers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="registration.html" class="active">Registration</a></li>
+        </ul>
+      </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
-            <label for="userName">Username:</label>
-            <input type="text" name="userName" placeholder="Enter your Username" />
+      <form action="#" onsubmit="myFunction()">
+        <label for="userName">Username:</label>
+        <input
+          type="text"
+          name="userName"
+          placeholder="Enter your Username"
+          pattern="[a-zA-Z][a-zA-Z0-9-_.]{1,20}"
+          title="Must be a minimum of 20 characters and only contain numbers and letters (inclusive)"
+        />
 
-            <label for="Password">Password:
-            </label>
-            <input type="password" name="password" placeholder="Enter your Password" />
+        <label for="Password">Password: </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your Password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must be a minimum of 8 characters"
+        />
 
-            <label for="passwordVerify">Verify your Password:
-            </label>
-            <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+        <label for="passwordVerify">Verify your Password: </label>
+        <input
+          type="password"
+          name="passwordVerify"
+          placeholder="Enter in your Password again"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must match password"
+        />
 
-            <label for="firstName">First Name:
-            </label>
-            <input type="text" name="firstName" placeholder="Enter your First Name" />
+        <label for="firstName">First Name: </label>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="Enter your First Name"
+        />
 
-            <label for="hostName">Last Name:
-            </label>
-            <input type="text" name="lastName" placeholder="Enter your Last Name" />
-            <label for="email">Email:
-            </label>
-            <input type="text" name="email" placeholder="Enter your Email Address" />
-			<label for="phoneNumber">Phone Number
-            </label>
-            <input type="text" name="lastName" placeholder="Enter your Phone Number" />
-			<label for="signUpNewsletter">Sign up for newsletter:
-            </label>
-			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
-				<input type="radio" name="signUpNewsletter" value="No"> No
-            <input type="submit" value="Next step">
-        </form>
+        <label for="hostName">Last Name: </label>
+        <input type="text" name="lastName" placeholder="Enter your Last Name" />
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your Email Address"
+          title="Uses xxx@xxx.xxx format"
+        />
+        <label for="phoneNumber">Phone Number </label>
+        <input
+          type="tel"
+          name="telno"
+          placeholder="Enter your Phone Number"
+          pattern="^\d{3}-\d{3}-\d{4}$"
+          title="Uses xxx-xxx-xxxx format"
+        />
+        <label for="signUpNewsletter">Sign up for newsletter: </label>
+        <input type="radio" name="signUpNewsletter" value="Yes" checked /> Yes
+        <input type="radio" name="signUpNewsletter" value="No" /> No
+        <input type="submit" value="Next step" />
+      </form>
     </section>
 
-    <footer>This events site is for IT3515 tasks.
-    </footer>
-</body>
-
+    <footer>This events site is for IT3515 tasks.</footer>
+  </body>
 </html>
