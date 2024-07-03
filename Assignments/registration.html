@@ -10,6 +10,31 @@
       function myFunction1() {
         alert("The was not submitted");
       }
+      //Validation Logic Definition
+      // including validateMe() function
+      document.querySelectorAll("form").forEach(function ($form) {
+        $form.addEventListener("submit", validateMe, false);
+        $form.setAttribute("nonvalidate", "");
+      });
+      function validateMe(e) {
+        var $form = e.target,
+          i = 0,
+          field_count = $form.elements.length,
+          $first_error = false;
+
+        for (i; i < field_count; i++) {
+          var $field = $form.elements[i],
+            valid = isValid($field);
+          if (!$first_error && !valid) {
+            $first_error = $field;
+          }
+        }
+
+        if ($first_error) {
+          e.preventDefault();
+          $first_error.focus();
+        }
+      }
     </script>
   </head>
 
@@ -39,6 +64,11 @@
           placeholder="Enter your Username"
           pattern="[a-zA-Z][a-zA-Z0-9-_.]{1,10}"
           title="Must be 1 - 10 characters and only contain numbers and letters (inclusive)"
+          required
+          aria-required="true"
+          data-error-required="Please enter your Username"
+          aria-errormessage="name-validation-error"
+          aria-invalid="true"
         />
 
         <label for="Password">Password: </label>
@@ -64,16 +94,36 @@
           type="text"
           name="firstName"
           placeholder="Enter your First Name"
+          required
+          aria-required="true"
+          data-error-required="Please enter your first name"
+          aria-errormessage="name-validation-error"
+          aria-invalid="true"
         />
 
         <label for="hostName">Last Name: </label>
-        <input type="text" name="lastName" placeholder="Enter your Last Name" />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Enter your Last Name"
+          required
+          aria-required="true"
+          data-error-required="Please enter your last name"
+          aria-errormessage="name-validation-error"
+          aria-invalid="true"
+        />
+
         <label for="email">Email: </label>
         <input
           type="email"
           name="email"
           placeholder="Enter your Email Address"
           title="Uses xxx@xxx.xxx format"
+          required
+          aria-required="true"
+          data-error-required="Please enter your email address"
+          aria-errormessage="name-validation-error"
+          aria-invalid="true"
         />
         <label for="phoneNumber">Phone Number </label>
         <input
@@ -82,11 +132,16 @@
           placeholder="Enter your Phone Number"
           pattern="^\d{3}-\d{3}-\d{4}$"
           title="Uses xxx-xxx-xxxx format"
+          required
+          aria-required="true"
+          data-error-required="Please enter your phone number"
+          aria-errormessage="name-validation-error"
+          aria-invalid="true"
         />
         <label for="signUpNewsletter">Sign up for newsletter: </label>
         <input type="radio" name="signUpNewsletter" value="Yes" checked /> Yes
         <input type="radio" name="signUpNewsletter" value="No" /> No
-        <input type="submit" value="Next step" />
+        <input type="submit" value="Submit Here" />
       </form>
     </section>
 
