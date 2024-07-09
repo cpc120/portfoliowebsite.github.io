@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <title>Interests Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script>
+         function display() {
+			var url = window.location.registration.html
+			document.getElementById('keyValue').innerHTML= url
+			var key=[]
+			var value=[]
+			var string1= url.split('?')[1].split('&')		
+			for(var i of string1)
+				{
+					var x=i.split('=')
+					key.push(x[0])
+					value.push(x[1])
+				}
+			var counter=key.length
+			var displayString=''
+			for( var i=0; i<counter; i++ )
+				{
+					displayString+=key[i]+':'+value[i]+ '<br />'
+				}
+			document.getElementById('displayKey').innerHTML= displayString
+         }
+    </script>
 </head>
 
-<body>
+<body onload="display()"> 
     <header>
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
@@ -24,21 +45,14 @@
                 <li><a href="registration.html" class="active">Registration</a>
                 </li>
             </ul>
-
         </nav>
     </header>
-    <section id="pageFormContent">
-
-            <!--
-			Process content to display content on screen
-			
-			-->
-            
-
+    <section id="pageFormContent"><br>
+        <div id="keyValue"></div>
+        <div id="displayKey"></div>
     </section>
 
     <footer>This events site is for IT3515 tasks.
     </footer>
 </body>
-
-</html>
+</html>   
