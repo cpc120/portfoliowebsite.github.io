@@ -41,6 +41,50 @@
           return true;
         }
       }
+      // Function to save form input values to cookies and redirect to confirm.html;
+      function saveToCookies() {
+        // Get form input values
+        var userNameFrmInpVal = document.getElementsByName("userName")[0].value;
+        var passwordFrmInpVal = document.getElementsByName("password")[0].value;
+        var passwordVerifyFrmInpVal =
+          document.getElementsByName("passwordVerify")[0].value;
+        var firstNameFrmInpVal =
+          document.getElementsByName("firstName")[0].value;
+        var lastNameFrmInpVal = document.getElementsByName("lastName")[0].value;
+        var emailFrmInpVal = document.getElementsByName("email")[0].value;
+        var phoneNumberFrmInpVal =
+          document.getElementsByName("phoneNumber")[0].value;
+        var signUpNewsletterFrmInpVal = document.querySelector(
+          'input[name="signUpNewsletter"]:checked'
+        ).value;
+        // Save values to cookies
+        document.cookie = "userName=" + userNameFrmInpVal;
+        document.cookie = "password=" + passwordFrmInpVal;
+        document.cookie = "passwordVerify=" + passwordVerifyFrmInpVal;
+        document.cookie = "firstName=" + firstNameFrmInpVal;
+        document.cookie = "lastName=" + lastNameFrmInpVal;
+        document.cookie = "email=" + emailFrmInpVal;
+        document.cookie = "phoneNumber=" + phoneNumberFrmInpVal;
+        document.cookie = "signUpNewsletter=" + signUpNewsletterFrmInpVal;
+        // Redirect to confirm.html with query strings attached
+        window.location.href = "confirm.html";
+        "confirm.html?userName=" +
+          userNameFrmInpVal +
+          "&password=" +
+          passwordFrmInpVal +
+          "&passwordVerify=" +
+          passwordVerifyFrmInpVal +
+          "&firstName=" +
+          firstNameFrmInpVal +
+          "&lastName=" +
+          lastNameFrmInpVal +
+          "&email=" +
+          emailFrmInpVal +
+          "&phoneNumber=" +
+          phoneNumberFrmInpVal +
+          "&signUpNewsletter=" +
+          signUpNewsletterFrmInpVal;
+      }
     </script>
   </head>
 
@@ -164,7 +208,7 @@
           <input type="radio" name="signUpNewsletter" value="Yes" checked /> Yes
           <input type="radio" name="signUpNewsletter" value="No" /> No
           <a href="thankyou.html" target="_blank">
-            <input type="button" value="Submit Here">
+            <input type="button" value="Submit Here" />
           </a>
         </form>
       </div>
