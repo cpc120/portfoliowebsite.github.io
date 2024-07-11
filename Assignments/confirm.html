@@ -1,62 +1,35 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Interests Page</title>
+<html>
+<head>
+    <title>Confirmation</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+  <header>
+    <div class="top">
+      <a class="logo" href="index.html"
+        >CapellaVolunteers<span class="dotcom">.org</span></a>
+    </div>
+    <! input information from form saved as cookies and displayed>
+    <h2>Thank you submitting the following information!</h2>
+    <p id="firstName"></p>
+    <p id="lastName"></p>
+    <p id="email"></p>
+    <p id="phone"></p>
+    <a href="index.html">Click here</a> to return to homepage.</p>
     <script>
-      // JavaScript function to read cookies and display information
-      function displayInfo() {
-        var firstName = getCookie("firstName");
-        var lastName = getCookie("lastName");
-        var email = getCookie("email");
-        var username = getCookie("username");
-        var phonenumber = getCookie("phonenumber");
+        // Read input from query string
+        var urlParams = new URLSearchParams(window.location.search);
+        var firstName = urlParams.get('firstName');
+        var lastName = urlParams.get('lastName');
+        var email = urlParams.get('email');
+        var phone = urlParams.get('phone');
 
-        // Display information
-        document.getElementById('firstName').textContent = firstName;
-        document.getElementById('lastName').textContent = lastName;
-        document.getElementById('email').textContent = email;
-        document.getElementById('username').textContent = username;
-        document.getElementById('phonenumber').textContent = phonenumber;
-      }
-
-      // Function to get cookie by name
-      function getCookie(cookieName) {
-        var name = cookieName + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var cookieArray = decodedCookie.split(";");
-        for (var i = 0; i < cookieArray.length; i++) {
-          var cookie = cookieArray[i].trim();
-          if (cookie.indexOf(name) == 0) {
-            return cookie.substring(name.length, cookie.length);
-          }
-        }
-        return "";
-      }
-      // Call displayInfo() when the page loads
-      window.onload = displayInfo;
+        // Display input values
+        document.getElementById('firstName').textContent = 'First Name: ' + firstName;
+        document.getElementById('lastName').textContent = 'Last Name: ' + lastName;
+        document.getElementById('email').textContent = 'Email: ' + email;
+        document.getElementById('phone').textContent = 'Phone: ' + phone;
     </script>
-  </head>
-  <body>
-    <header>
-      <div class="top">
-        <a class="logo" href="index.html"
-          >CapellaVolunteers<span class="dotcom">.org</span></a
-        >
-      </div>
-    </header>
-    <section id="pageFormContent">
-      <br />
-      <h2>Thank you! Your form has been submitted! Here are your details.</h2>
-      <ul>
-        <li><strong>First Name:</strong> <span id="firstName"></span></li>
-        <li><strong>Last Name:</strong> <span id="lastName"></span></li>
-        <li><strong>Email:</strong> <span id="email"></span></li>
-        <li><strong>Username:</strong> <span id="username"></span></li>
-        <li><strong>Phone Number:</strong> <span id="phonenumber"></span></li>
-      </ul>
-      <a href="index.html">Click here</a> to return to Homepage
-    </section>
-    <footer>This events site is for IT3515 tasks.</footer>
-  </body>
+</body>
 </html>

@@ -34,23 +34,6 @@
         }
       }
       function submitForm() {
-        // Get form input values
-        var firstName = document.getElementById('firstName').value;
-        var lastName = document.getElementById('lastName').value;
-        var email = document.getElementById('email').value;
-        var username = document.getElementById('username').value;
-        var phonenumber = document.getElementById('phonenumber').value;
-
-        // Set cookies with the input values
-        document.cookie = "firstName=" + encodeURIComponent(firstName);
-        document.cookie = "lastName=" + encodeURIComponent(lastName);
-        document.cookie = "email=" + encodeURIComponent(email);
-        document.cookie = "username=" + encodeURIComponent(username);
-        document.cookie = "phonenumber=" + encodeURIComponent(phonenumber);
-
-        // Redirect to confirm.html
-        window.location = "confirm.html";
-
         if (validationfails) {
           return false;
         } else {
@@ -58,6 +41,24 @@
           return true;
         }
       }
+      document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form inputs
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+
+            // Save inputs to cookies
+            document.cookie = 'firstName=' + encodeURIComponent(firstName);
+            document.cookie = 'lastName=' + encodeURIComponent(lastName);
+            document.cookie = 'email=' + encodeURIComponent(email);
+            document.cookie = 'phoneNumber=' + encodeURIComponent(phoneNumber);
+
+            // Open confirm.html page
+            window.open('confirm.html', '_self');
+        });
     </script>
   </head>
 
@@ -78,117 +79,87 @@
         </ul>
       </nav>
     </header>
-    <section id="pageForm">
-      <div id="my_form">
+    <section>
+      <div>
         <! attribute added to the form tag>
-        <form action="#" onsubmit="event.preventDefault(); submitForm;">
+        <form id="registrationForm" action="confirm.html" method="get">
           <! each section follows the same format from here by using the pattern attribute for the user to input data>
           <! the title attribute was used to specificy data required in each input field>
           <! error messages are customized to their assigned input field using the following attributes: required, aria-required, data-error-required, aria-errormessage, and aria-invalid>
           <! this was to default the user's cursor to the first erroneous input field in the event that there is an input error>
-          <label for="username">Username:</label>
+          <label for="userName">Username:</label>
           <input
-            id="username"
             type="text"
+            id="userName"
             name="username"
             placeholder="Enter your Username"
             pattern="[a-zA-Z][a-zA-Z0-9-_.]{1,10}"
             title="Must be 1 - 10 characters and only contain numbers and letters (inclusive)"
             required
-            aria-required="true"
-            data-error-required="Please enter your Username"
-            aria-errormessage="name-validation-error"
-            aria-invalid="true"
           />
 
           <label for="Password">Password: </label>
           <input
-            id="password"
             type="password"
+            id="password"
             name="password"
             placeholder="Enter your Password"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must be a minimum of 8 characters"
             required
-            aria-required="true"
-            data-error-required="Please enter your Password"
-            aria-errormessage="name-validation-error"
-            aria-invalid="true"
           />
 
           <label for="passwordVerify">Verify your Password: </label>
           <input
-            id="passwordV"
             type="password"
+            id="passwordVerify"
             name="passwordVerify"
             placeholder="Enter in your Password again"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must match password"
             required
-            aria-required="true"
-            data-error-required="Please enter you Password again"
-            aria-errormessage="name-validation-error"
-            aria-invalid="true"
           />
 
           <label for="firstName">First Name: </label>
           <input
-            id="firstName"
             type="text"
+            id="firstName"
             name="firstName"
             placeholder="Enter your First Name"
             required
-            aria-required="true"
-            data-error-required="Please enter your first name"
-            aria-errormessage="name-validation-error"
-            aria-invalid="true"
           />
 
           <label for="hostName">Last Name: </label>
           <input
-            id="lastName"
             type="text"
+            id="lastName"
             name="lastName"
             placeholder="Enter your Last Name"
             required
-            aria-required="true"
-            data-error-required="Please enter your last name"
-            aria-errormessage="name-validation-error"
-            aria-invalid="true"
-          />
 
           <label for="email">Email: </label>
           <input
-            id="email"
             type="email"
+            id="email"
             name="email"
             placeholder="Enter your Email Address"
             title="Uses xxx@xxx.xxx format"
             required
-            aria-required="true"
-            data-error-required="Please enter your email address"
-            aria-errormessage="name-validation-error"
-            aria-invalid="true"
           />
-          <label for="phonenumber">Phone Number </label>
+          <label for="phoneNumber">Phone Number </label>
           <input
-            id="phonenumber"
             type="tel"
-            name="phonenumber"
+            id="phone"
+            name="phone"
             placeholder="Enter your Phone Number"
             pattern="^\d{3}-\d{3}-\d{4}$"
             title="Uses xxx-xxx-xxxx format"
             required
-            aria-required="true"
-            data-error-required="Please enter your phone number"
-            aria-errormessage="name-validation-error"
-            aria-invalid="true"
           />
           <label for="signUpNewsletter">Sign up for newsletter: </label>
           <input type="radio" name="signUpNewsletter" value="Yes" checked /> Yes
           <input type="radio" name="signUpNewsletter" value="No" /> No
-          <a href="confirm.html" target="_blank">
-            <input type="button" value="Submit" />
+            <input type="submit" value="Submit"/>
           </a>
         </form>
       </div>
