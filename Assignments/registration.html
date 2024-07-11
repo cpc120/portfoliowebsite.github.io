@@ -34,56 +34,29 @@
         }
       }
       function submitForm() {
+        // Get form input values
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var email = document.getElementById('email').value;
+        var username = document.getElementById('username').value;
+        var phonenumber = document.getElementById('phonenumber').value;
+
+        // Set cookies with the input values
+        document.cookie = "firstName=" + encodeURIComponent(firstName);
+        document.cookie = "lastName=" + encodeURIComponent(lastName);
+        document.cookie = "email=" + encodeURIComponent(email);
+        document.cookie = "username=" + encodeURIComponent(username);
+        document.cookie = "phonenumber=" + encodeURIComponent(phonenumber);
+
+        // Redirect to confirm.html
+        window.location = "confirm.html";
+
         if (validationfails) {
           return false;
         } else {
           document.form.submit();
           return true;
         }
-      }
-      // Function to save form input values to cookies and redirect to confirm.html;
-      function saveToCookies() {
-        // Get form input values
-        var userNameFrmInpVal = document.getElementsByName("userName")[0].value;
-        var passwordFrmInpVal = document.getElementsByName("password")[0].value;
-        var passwordVerifyFrmInpVal =
-          document.getElementsByName("passwordVerify")[0].value;
-        var firstNameFrmInpVal =
-          document.getElementsByName("firstName")[0].value;
-        var lastNameFrmInpVal = document.getElementsByName("lastName")[0].value;
-        var emailFrmInpVal = document.getElementsByName("email")[0].value;
-        var phoneNumberFrmInpVal =
-          document.getElementsByName("phoneNumber")[0].value;
-        var signUpNewsletterFrmInpVal = document.querySelector(
-          'input[name="signUpNewsletter"]:checked'
-        ).value;
-        // Save values to cookies
-        document.cookie = "userName=" + userNameFrmInpVal;
-        document.cookie = "password=" + passwordFrmInpVal;
-        document.cookie = "passwordVerify=" + passwordVerifyFrmInpVal;
-        document.cookie = "firstName=" + firstNameFrmInpVal;
-        document.cookie = "lastName=" + lastNameFrmInpVal;
-        document.cookie = "email=" + emailFrmInpVal;
-        document.cookie = "phoneNumber=" + phoneNumberFrmInpVal;
-        document.cookie = "signUpNewsletter=" + signUpNewsletterFrmInpVal;
-        // Redirect to confirm.html with query strings attached
-        window.location.href = "confirm.html";
-        "confirm.html?userName=" +
-          userNameFrmInpVal +
-          "&password=" +
-          passwordFrmInpVal +
-          "&passwordVerify=" +
-          passwordVerifyFrmInpVal +
-          "&firstName=" +
-          firstNameFrmInpVal +
-          "&lastName=" +
-          lastNameFrmInpVal +
-          "&email=" +
-          emailFrmInpVal +
-          "&phoneNumber=" +
-          phoneNumberFrmInpVal +
-          "&signUpNewsletter=" +
-          signUpNewsletterFrmInpVal;
       }
     </script>
   </head>
@@ -108,15 +81,16 @@
     <section id="pageForm">
       <div id="my_form">
         <! attribute added to the form tag>
-        <form action="#" onsubmit="myFunction()" name="myForm">
+        <form action="#" onsubmit="event.preventDefault(); submitForm;">
           <! each section follows the same format from here by using the pattern attribute for the user to input data>
           <! the title attribute was used to specificy data required in each input field>
           <! error messages are customized to their assigned input field using the following attributes: required, aria-required, data-error-required, aria-errormessage, and aria-invalid>
           <! this was to default the user's cursor to the first erroneous input field in the event that there is an input error>
-          <label for="userName">Username:</label>
+          <label for="username">Username:</label>
           <input
+            id="username"
             type="text"
-            name="userName"
+            name="username"
             placeholder="Enter your Username"
             pattern="[a-zA-Z][a-zA-Z0-9-_.]{1,10}"
             title="Must be 1 - 10 characters and only contain numbers and letters (inclusive)"
@@ -129,6 +103,7 @@
 
           <label for="Password">Password: </label>
           <input
+            id="password"
             type="password"
             name="password"
             placeholder="Enter your Password"
@@ -143,6 +118,7 @@
 
           <label for="passwordVerify">Verify your Password: </label>
           <input
+            id="passwordV"
             type="password"
             name="passwordVerify"
             placeholder="Enter in your Password again"
@@ -157,6 +133,7 @@
 
           <label for="firstName">First Name: </label>
           <input
+            id="firstName"
             type="text"
             name="firstName"
             placeholder="Enter your First Name"
@@ -169,6 +146,7 @@
 
           <label for="hostName">Last Name: </label>
           <input
+            id="lastName"
             type="text"
             name="lastName"
             placeholder="Enter your Last Name"
@@ -181,6 +159,7 @@
 
           <label for="email">Email: </label>
           <input
+            id="email"
             type="email"
             name="email"
             placeholder="Enter your Email Address"
@@ -191,10 +170,11 @@
             aria-errormessage="name-validation-error"
             aria-invalid="true"
           />
-          <label for="phoneNumber">Phone Number </label>
+          <label for="phonenumber">Phone Number </label>
           <input
+            id="phonenumber"
             type="tel"
-            name="telno"
+            name="phonenumber"
             placeholder="Enter your Phone Number"
             pattern="^\d{3}-\d{3}-\d{4}$"
             title="Uses xxx-xxx-xxxx format"
@@ -207,8 +187,8 @@
           <label for="signUpNewsletter">Sign up for newsletter: </label>
           <input type="radio" name="signUpNewsletter" value="Yes" checked /> Yes
           <input type="radio" name="signUpNewsletter" value="No" /> No
-          <a href="thankyou.html" target="_blank">
-            <input type="button" value="Submit Here" />
+          <a href="confirm.html" target="_blank">
+            <input type="button" value="Submit" />
           </a>
         </form>
       </div>

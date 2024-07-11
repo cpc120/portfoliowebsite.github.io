@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+  <head>
     <title>Interests Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script>
-         function display() {
-			var url = window.location.registration.html
-			document.getElementById('keyValue').innerHTML= url
-			var key=[]
-			var value=[]
-			var string1= url.split('?')[1].split('&')		
-			for(var i of string1)
-				{
-					var x=i.split('=')
-					key.push(x[0])
-					value.push(x[1])
-				}
-			var counter=key.length
-			var displayString=''
-			for( var i=0; i<counter; i++ )
-				{
-					displayString+=key[i]+':'+value[i]+ '<br />'
-				}
-			document.getElementById('displayKey').innerHTML= displayString
-         }
+      // JavaScript function to read cookies and display information
+      function displayInfo() {
+        var firstName = getCookie("firstName");
+        var lastName = getCookie("lastName");
+        var email = getCookie("email");
+        var username = getCookie("username");
+        var phonenumber = getCookie("phonenumber");
+
+        // Display information
+        document.getElementById('firstName').textContent = firstName;
+        document.getElementById('lastName').textContent = lastName;
+        document.getElementById('email').textContent = email;
+        document.getElementById('username').textContent = username;
+        document.getElementById('phonenumber').textContent = phonenumber;
+      }
+
+      // Function to get cookie by name
+      function getCookie(cookieName) {
+        var name = cookieName + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var cookieArray = decodedCookie.split(";");
+        for (var i = 0; i < cookieArray.length; i++) {
+          var cookie = cookieArray[i].trim();
+          if (cookie.indexOf(name) == 0) {
+            return cookie.substring(name.length, cookie.length);
+          }
+        }
+        return "";
+      }
+      // Call displayInfo() when the page loads
+      window.onload = displayInfo;
     </script>
-</head>
-
-<body onload="display()"> 
+  </head>
+  <body>
     <header>
-        <div class="top">
-            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-        </div>
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="invitation.html">Invitation</a>
-                </li>
-			    <li><a href="volunteer.html">Volunteers</a>
-                </li>
-                <li><a href="gallery.html">Gallery</a>
-                </li>
-                <li><a href="registration.html" class="active">Registration</a>
-                </li>
-            </ul>
-        </nav>
+      <div class="top">
+        <a class="logo" href="index.html"
+          >CapellaVolunteers<span class="dotcom">.org</span></a
+        >
+      </div>
     </header>
-    <section id="pageFormContent"><br>
-        <div id="keyValue"></div>
-        <div id="displayKey"></div>
+    <section id="pageFormContent">
+      <br />
+      <h2>Thank you! Your form has been submitted! Here are your details.</h2>
+      <ul>
+        <li><strong>First Name:</strong> <span id="firstName"></span></li>
+        <li><strong>Last Name:</strong> <span id="lastName"></span></li>
+        <li><strong>Email:</strong> <span id="email"></span></li>
+        <li><strong>Username:</strong> <span id="username"></span></li>
+        <li><strong>Phone Number:</strong> <span id="phonenumber"></span></li>
+      </ul>
+      <a href="index.html">Click here</a> to return to Homepage
     </section>
-
-    <footer>This events site is for IT3515 tasks.
-    </footer>
-</body>
-</html>   
+    <footer>This events site is for IT3515 tasks.</footer>
+  </body>
+</html>
